@@ -1,13 +1,11 @@
 # Analyse_Multicritere_Val_Cenis
 
 ## Objectif
-Identifier rapidement les secteurs **favorables** à l’implantation de nouveaux refuges sur **Val-Cenis** en croisant relief, accessibilité rando/route, isolement vis-à-vis des bâtiments, attraits, et contraintes environnementales/risques.  
-Le pipeline (QGIS Modeler) produit : un **raster de potentiel 0–100**, des **zones prioritaires** (≥ 1 ha, hors contraintes), et des **points candidats**. Résolution commune **10 m**, **EPSG:2154**. Données issues de la base **sig_vc** et du **MNT ign_mnt_2020**.
+Identifier rapidement les secteurs favorables à l’implantation de nouveaux refuges sur **Val-Cenis** en croisant relief, accessibilité rando/route, isolement vis-à-vis des bâtiments, points-de-vue et contraintes environnementales/risques.  
+L'analyse produit une fichier vecteur des zones favorables pour l'implantation d'un nouveau refuge selon ces critères, avec un taux supérieur à 80% de confiance. L'analyse produit aussi un raster noté de 0 à 100 représentant les zones favorables.</br>
+Données issues de la base **sig_vc** et du **MNT ign_mnt_2020**.
 
 ## Méthode
-
-### Prétraitements & alignement (10 m)
-- Harmonisation de l’**emprise**, de l’**origine de pixel** et du **CRS** pour tous les rasters (GDAL *Warp*, option *Aligner l’origine des pixels*).
 
 ### Critères reclassés en 0–100
 - **Terrain** : pente (°) et altitude (m).  
