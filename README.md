@@ -39,7 +39,8 @@ Les contraintes environnementales et les risques sont fusionnés, une zone tampo
   <img width="686" height="616" alt="8" src="https://github.com/user-attachments/assets/0e3ce2bb-ced3-4e92-b98e-7eb969ea01e5" />
 - Ouvrez le modeler QGIS
   <img width="1660" height="314" alt="9" src="https://github.com/user-attachments/assets/8325d7e6-355a-4a11-96c9-a19feb026a8a" />
-- Ajoutez le premier modèle "1_amc_vc" et paramètrez le comme ci-dessous (les sorties d'algorithmes doivent toutes être remplis): 
+- Depuis le panneau "Algorithmes", dans la section modèle, ajoutez le premier modèle "1_amc_vc" et paramètrez le comme ci-dessous (les sorties d'algorithmes doivent toutes être remplis): 
+<img width="2885" height="1526" alt="11" src="https://github.com/user-attachments/assets/9a923023-5d5e-437f-9647-f5bc064ca5b0" />
 <img width="1960" height="1496" alt="1" src="https://github.com/user-attachments/assets/b3e9e223-ea3b-4fb8-9f34-64a57795bc2b" />
 - Veillez à bien remplir les chemins des sorties d'algorithmes 
 <img width="600" height="696" alt="3" src="https://github.com/user-attachments/assets/c20a5656-cb47-4818-bb79-3cd2c53bbe34" />
