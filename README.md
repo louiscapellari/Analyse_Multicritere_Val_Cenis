@@ -12,10 +12,10 @@ La démarche combine des critères hétérogènes transformés en surfaces conti
 Les contraintes environnementales et les risques sont fusionnés, une zone tampon de 10m est établit en plus par mesure de sécurité minimale, puis rasterisées en masque binaire. Ce masque est appliqué au score combiné pour supprimer toute valeur sur les zones exclues. Les critères reclassés sont agrégés par une moyenne pondérée, puis le résultat est normalisé. Le top 20% est ensuite polygonisé et filtré sur une surface minimale. Enfin, une dernière zone de tampon de 200m est découpée du dernier résultat pour produire le résultat final à partir des risques les plus importants représentés par la couche geo050k_harm_l_struct.</br> 
 
 ## Limites
-- Seuils & pondérations : Valeurs choisies arbitrairement selon un contexte cohérent, mais pourrait être amélioré par une expertise métier forte. 
+- Seuils et pondérations : Valeurs choisies arbitrairement selon un contexte cohérent, mais pourrait être amélioré par une expertise métier forte. 
 - Qualité de l'analyse dépendante de la dernière mise à jour des données ainsi que de leur précision.
 - Un nettoyage des couches temporaires pourrait être fait au fur et à mesure en python.  
-- Technique d'analyse qui pourrait davantage optimisée, et réalisée intégralement en python.
+- Technique d'analyse qui pourrait davantage optimisée pour réduire les sorties et réalisée intégralement en python éventuellement. 
 
 ## Prérequis 
 - Disposer d'un MNT sur la commune de Val-Cenis (de préférence le MNT 1m de la BD Alti de l'IGN)
@@ -34,24 +34,24 @@ Les contraintes environnementales et les risques sont fusionnés, une zone tampo
 ## Instructions 
 - Télécharger les fichiers .model3 (format issu du modeler de QGIS).
 - Ajoutez les fichiers .model3 à votre QGIS
-  <img width="558" height="1156" alt="10" src="https://github.com/user-attachments/assets/2365d73c-2c54-475d-9b5a-2df9beed977e" />
+<img width="558" height="1156" alt="10" src="https://github.com/user-attachments/assets/2365d73c-2c54-475d-9b5a-2df9beed977e" />
 - Ajoutez les couches requises à votre projet QGIS (depuis la base de données sig_vc)
-  <img width="686" height="616" alt="8" src="https://github.com/user-attachments/assets/0e3ce2bb-ced3-4e92-b98e-7eb969ea01e5" />
+<img width="686" height="616" alt="8" src="https://github.com/user-attachments/assets/0e3ce2bb-ced3-4e92-b98e-7eb969ea01e5" />
 - Ouvrez le modeler QGIS
-  <img width="1660" height="314" alt="9" src="https://github.com/user-attachments/assets/8325d7e6-355a-4a11-96c9-a19feb026a8a" />
+<img width="1660" height="314" alt="9" src="https://github.com/user-attachments/assets/8325d7e6-355a-4a11-96c9-a19feb026a8a" />
 - Depuis le panneau "Algorithmes", dans la section modèle, ajoutez le premier modèle "1_amc_vc" et paramètrez le comme ci-dessous (les sorties d'algorithmes doivent toutes être remplis): 
 <img width="2885" height="1526" alt="11" src="https://github.com/user-attachments/assets/9a923023-5d5e-437f-9647-f5bc064ca5b0" />
 <img width="1960" height="1496" alt="1" src="https://github.com/user-attachments/assets/b3e9e223-ea3b-4fb8-9f34-64a57795bc2b" />
 - Veillez à bien remplir les chemins des sorties d'algorithmes 
 <img width="600" height="696" alt="3" src="https://github.com/user-attachments/assets/c20a5656-cb47-4818-bb79-3cd2c53bbe34" />
 - Vous devriez obtenir ceci :
-  <img width="718" height="972" alt="2" src="https://github.com/user-attachments/assets/ae8bf777-1c9e-4907-8cac-5a90da2a8931" />
+<img width="718" height="972" alt="2" src="https://github.com/user-attachments/assets/ae8bf777-1c9e-4907-8cac-5a90da2a8931" />
 - Ajoutez le second modèle "2_amc_vc" et paramètrez le comme ci-dessous (n'oubliez pas de paramétrer la dépendence au premier modèle) :
-  <img width="1964" height="1502" alt="4" src="https://github.com/user-attachments/assets/1287e448-a05a-4cab-9258-0ac91938e10a" />
+<img width="1964" height="1502" alt="4" src="https://github.com/user-attachments/assets/1287e448-a05a-4cab-9258-0ac91938e10a" />
 - Veillez à bien remplir les chemins des sorties d'algorithmes 
 - Ajoutez le troisième et dernier modèle "3_amc_vc" et paramètrez le comme ci-dessous (n'oubliez pas de paramétrer les dépendences aux deux précédents modèles) :
-  <img width="1958" height="1496" alt="5" src="https://github.com/user-attachments/assets/cba50161-f0a6-43d9-8feb-5196289daa87" />
-- Couches à enregistrer en .gpkg :
+<img width="1958" height="1496" alt="5" src="https://github.com/user-attachments/assets/cba50161-f0a6-43d9-8feb-5196289daa87" />
+- **Couches à enregistrer en .gpkg** :
 - centroides_grille_vc
 - grille100
 - grille100_val_cenis
@@ -62,7 +62,7 @@ Les contraintes environnementales et les risques sont fusionnés, une zone tampo
 - grille_100_dist_sentier_2
 - zones_vecteurs
 - zones_candidates_finales
-- Couches à enregistrer .tif :
+- **Couches à enregistrer .tif** :
 - pente_vc
 - score_alti
 - score_pente
@@ -76,7 +76,7 @@ Les contraintes environnementales et les risques sont fusionnés, une zone tampo
 - score_intermediaire
 - zones_sup_80
 - Vous devriez finalement obtenir un modèle comme ci-dessous :
-  <img width="1724" height="926" alt="6" src="https://github.com/user-attachments/assets/e0ecdc93-2477-4e36-9f41-7de5fa610a43" />
+<img width="1724" height="926" alt="6" src="https://github.com/user-attachments/assets/e0ecdc93-2477-4e36-9f41-7de5fa610a43" />
 - Exécutez le modèle
 
 ## Résultats 
