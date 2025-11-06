@@ -61,8 +61,7 @@ Les contraintes environnementales et les risques sont fusionnés. Une zone tampo
 - grille_100_dist_route_2
 - grille_100_dist_sentier_2
 - zones_vecteurs
-- zones_candidates_finales </br>
-</br>
+- zones_candidates_finales </br></br>
 **Couches à enregistrer .tif :**
 - pente_vc
 - score_alti
