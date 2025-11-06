@@ -33,7 +33,7 @@ Les contraintes environnementales et les risques sont fusionnés. Une zone tampo
 
 ## Instructions 
 - Télécharger les fichiers .model3 (format issu du modeler de QGIS).
-- Ajoutez les fichiers .model3 à votre QGIS 
+- Ajoutez les fichiers .model3 à votre QGIS</br> 
 <img width="558" height="1156" alt="10" src="https://github.com/user-attachments/assets/2365d73c-2c54-475d-9b5a-2df9beed977e" /> </br>
 - Ajoutez les couches requises à votre projet QGIS (depuis la base de données sig_vc) </br>
 <img width="686" height="616" alt="8" src="https://github.com/user-attachments/assets/0e3ce2bb-ced3-4e92-b98e-7eb969ea01e5" /> </br>
@@ -61,7 +61,7 @@ Les contraintes environnementales et les risques sont fusionnés. Une zone tampo
 - grille_100_dist_route_2
 - grille_100_dist_sentier_2
 - zones_vecteurs
-- zones_candidates_finales
+- zones_candidates_finales</br>
 **Couches à enregistrer .tif :**
 - pente_vc
 - score_alti
