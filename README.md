@@ -3,19 +3,19 @@
 ## Objectif
 Identifier rapidement les secteurs favorables à l’implantation de nouveaux refuges sur la commune de **Val-Cenis** en croisant relief, accessibilité aux chemins de randonées, à la route, isolement vis-à-vis des bâtiments, points-de-vue et contraintes environnementales/risques.</br>  
 L'analyse produit un fichier vecteur des zones favorables à l'implantation d'un nouveau refuge selon les critères précedemment cités avec un taux supérieur à 80% de confiance. L'analyse produit également un raster noté de 0 à 100 représentant les zones plus ou moins favorables à l'implantation.</br>
-Données issues de la base **sig_vc** et d'un MNT à 1m de résolution issu de la BD Alti de l'IGN.</br>
+Données issues de la base **sig_vc** et du MNT à 1m issu de la BD Alti de l'IGN.</br>
 
 ## Méthodologie
 
-La démarche combine des critères hétérogènes transformés en surfaces continues comparables. À partir du MNT, la pente et l’altitude sont reclassées en scores 0–100 selon des seuils cohérents pour l’implantation d’un refuge. Les autres couches (sentiers, routes, refuges, points d’intérêt) ainsi que l’isolement vis-à-vis des bâtiments sont convertis en distances au plus proche, puis reclassés en scores 0–100 selon que la proximité ou l’éloignement est recherché.</br>
+La démarche combine des critères hétérogènes transformés en surfaces continues comparables. À partir du MNT, la pente et l’altitude sont reclassées en scores 0–100 selon des seuils cohérents (défini ici arbitrairement) pour l’implantation d’un refuge. Les autres couches (sentiers, routes, refuges, points d’intérêt) ainsi que l’isolement vis-à-vis des bâtiments sont convertis en distances au plus proche, puis reclassés en scores 0–100 selon que la proximité ou l’éloignement est recherché.</br>
 
-Les contraintes environnementales et les risques sont fusionnés. Une zone tampon de 10m est établie autour des risques par mesure de sécurité minimale. Le tout est ensuite rasterisé en masque binaire. Ce masque est appliqué au score combiné pour supprimer toute valeur sur les zones exclues. Les critères reclassés sont agrégés par une moyenne pondérée, puis le résultat est normalisé. Le top 20% est ensuite polygonisé et filtré sur une surface minimale. Enfin, une dernière zone de tampon de 200m est découpée du dernier résultat pour produire le résultat final à partir des risques les plus importants représentés par la couche geo050k_harm_l_struct.</br> 
+Les contraintes environnementales et les risques sont fusionnés. Une zone tampon de 10m est établie autour des risques par mesure de sécurité minimale. Le tout est ensuite rasterisé en masque binaire. Ce masque est appliqué au score combiné précédemment établit pour supprimer toute valeur sur les zones exclues. Les critères reclassés sont agrégés par une moyenne pondérée, puis le résultat est normalisé de 0 à 100. Le top 20% est ensuite polygonisé et filtré sur une surface minimale. Enfin, une dernière zone de tampon de 200m est découpée du dernier résultat obtenu pour produire le résultat définitif en tenant compte des risques les plus importants représentés par la couche geo050k_harm_l_struct.</br> 
 
 ## Limites
 - Seuils et pondérations : Valeurs choisies arbitrairement selon un contexte cohérent, mais pourrait être amélioré par une expertise métier forte. 
 - Qualité de l'analyse dépendante de la dernière mise à jour des données ainsi que de leur précision.
 - Un nettoyage des couches temporaires pourrait être fait au fur et à mesure en python.  
-- Technique d'analyse qui pourrait davantage optimisée pour réduire les sorties et réalisée intégralement en python éventuellement. 
+- Technique d'analyse qui pourrait être davantage optimisée pour réduire les sorties et être réalisée intégralement en python éventuellement. 
 
 ## Prérequis 
 - Disposer d'un MNT sur la commune de Val-Cenis (de préférence le MNT 1m de la BD Alti de l'IGN)
@@ -80,7 +80,7 @@ Les contraintes environnementales et les risques sont fusionnés. Une zone tampo
 - Exécutez le modèle
 
 ## Résultats 
-- Les seuls résultats qui nous intéressent en sortie d'analyse sont les couches "zones_candidates_finales.gpkg" et , le reste peut-être supprimé.
+- Les seuls résultats qui nous intéressent en sortie d'analyse sont les couches `zones_candidates_finales.gpkg` et `score_final_exclu.tif`, le reste peut-être supprimé.
 - Vous devriez obtenir le résultat suivant : 
 <img width="2312" height="1221" alt="7" src="https://github.com/user-attachments/assets/face1b41-999b-4315-be17-d9632579be0b" />
 
