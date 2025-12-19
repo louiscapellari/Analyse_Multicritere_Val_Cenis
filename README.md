@@ -19,9 +19,9 @@ Les contraintes environnementales et les risques sont fusionnés. Une zone tampo
 
 ## Prérequis 
 - Disposer d'un MNT sur la commune de Val-Cenis (de préférence le MNT 1m de la BD Alti de l'IGN)
-- Disposer de la base de données sig_vc
-- Couches requises :
-- MNT (de préférence celui de l'IGN)
+- Disposer de la base de données [vc_bdd](https://github.com/louiscapellari/vc_bdd)
+- Couches requises provenant de [vc_bdd](https://github.com/louiscapellari/vc_bdd) :
+- MNT (de préférence celui de l'IGN, absent de la base de données [vc_bdd](https://github.com/louiscapellari/vc_bdd))
 - val_cenis
 - batiment
 - refuges
