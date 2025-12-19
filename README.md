@@ -3,7 +3,7 @@
 ## Objectif
 Identifier rapidement les secteurs favorables à l’implantation de nouveaux refuges sur la commune de **Val-Cenis** en croisant relief, accessibilité aux chemins de randonées, à la route, isolement vis-à-vis des bâtiments, points-de-vue et contraintes environnementales/risques.</br>  
 L'analyse produit un fichier vecteur des zones favorables à l'implantation d'un nouveau refuge selon les critères précedemment cités avec un taux supérieur à 80% de confiance. L'analyse produit également un raster noté de 0 à 100 représentant les zones plus ou moins favorables à l'implantation.</br>
-Données issues de la base de données du projet [vc_bdd](https://github.com/louiscapellari/vc_bdd).  et du MNT à 1m issu de la BD Alti de l'IGN.</br>
+Données issues de la base de données du projet [vc_bdd](https://github.com/louiscapellari/vc_bdd) et du MNT à 1m issu de la BD Alti de l'IGN.</br>
 
 ## Méthodologie
 
